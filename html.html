@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Бухта</title>
+    <link rel="stylesheet" href="css.css">
+    <script src="script.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <label class="animation_priz">0</label>
+    <div class="for_account">
+      <div class="sec_for_account">
+        <div class="account">
+          0
+        </div>
+      </div>
+      <div class="sec_for_game_count">
+        <div class="game_count">
+          0
+        </div>
+      </div>
+    </div>
+    <div class="b">
+      <div class="main">
+        <div class="block_settings">
+          <div class="sec_block_settings">
+            <div class="panel">
+              <div id="info">Сума ставки (від 1 до 1000)</div>
+              <div class="for_input_stavka">
+                <div class="stavka_minus" onclick="st(-1)">-</div>
+                <input type="number" class="input_stavka" value="5">
+                <div class="stavka_plus" onclick="st(1)">+</div>
+              </div>
+              <div class="choose_stavka">
+                  <button type="button" id="b1" class="btn_stavka" onclick="change_stavka(1)">1</button>
+                  <button type="button" id="b2" class="btn_stavka" onclick="change_stavka(2)">2</button>
+                  <button type="button" id="b3" class="btn_stavka" onclick="change_stavka(5)">5</button>
+                  <!--<button type="button" id="b4" class="btn_stavka" onclick="change_stavka(10)">10</button>
+                  <button type="button" id="b5" class="btn_stavka" onclick="change_stavka(25)">25</button>
+                  <button type="button" id="b6" class="btn_stavka" onclick="change_stavka(50)">50</button>
+                  <button type="button" id="b7" class="btn_stavka" onclick="change_stavka(100)">100</button>
+                  <button type="button" id="b8" class="btn_stavka" onclick="change_stavka(250)">250</button>
+                  <button type="button" id="b9" class="btn_stavka" onclick="change_stavka(500)">500</button>
+                  <button type="button" id="b10" class="btn_stavka" onclick="change_stavka(1000)">1000</button>-->
+              </div>
+              <div class="o">
+                <div class="f">
+                  <div class="mes">Ширина поля</div>
+                  <div class="choose_field">
+                    <!--<button type="button" class="btn_field_checked" id="btn_field1" onclick="redraw_field(event.target, 10)">10</button>-->
+                    <button type="button" class="btn_field_checked" id="btn_field2" onclick="redraw_field(event.target, 15)">15</button>
+                    <button type="button" class="btn_field" id="btn_field3" onclick="redraw_field(event.target, 21)">21</button>
+                  </div>
+                </div>
+                <div class="p">
+                  <div class="mes">Кількість піратів</div>
+                  <div class="choose_pirates">
+                    <button type="button" class="btn_pirates_checked" id="btn_pirates1" onclick="change_number_pirates(event, 3)">4</button>
+                    <button type="button" class="btn_pirates" id="btn_pirates2" onclick="change_number_pirates(event, 4)">5</button>
+                    <button type="button" class="btn_pirates" id="btn_pirates3" onclick="change_number_pirates(event, 5)">6</button>
+                  </div>
+                </div>
+              </div>
+              <button type="button" class="btn_play" onclick="play_game(event)">ГРАТИ</button>
+              <div class="question_to_change_stavka">
+                Почати збір артефактів спочатку?
+                <div class="ques">
+                  <button type="button" class="btn_ans no" onclick="submit(false)">Ні</button>
+                  <button type="button" class="btn_ans yes" onclick="submit(true)">Так</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="block_game">
+          <div class="panel_kofs">
+            <div class="sec_panel_kofs">
+
+            </div>
+          </div>
+          <div class="sec_block_game">
+            <div class="game">
+            </div>
+          </div>
+          <div class="any_block">
+            <div class="div1" title="Сбор набора из трех символов принесет вам&#013;дополнительный выигрыш. Чем больше игр&#013;ты сыграешь, тем больше шанс выиграть.">
+              <label class="priz">0 грн</label>
+              <div class="for_sumbol">
+                <img class="sumbol" id="sumbol1" src="Elements/key.png">
+                <img class="chest" id="chest1" src="Elements/6.png">
+              </div>
+              <div class="for_sumbol">
+                <img class="sumbol" id="sumbol2" src="Elements/key.png">
+                <img class="chest" id="chest2" src="Elements/6.png">
+              </div>
+              <div class="for_sumbol">
+                <img class="sumbol" id="sumbol3" src="Elements/key.png">
+                <img class="chest" id="chest3" src="Elements/6.png">
+              </div>
+              <div class="for_sumbol">
+                <img class="sumbol" id="sumbol4" src="Elements/key.png">
+                <img class="chest" id="chest4" src="Elements/6.png">
+              </div>
+              <div class="for_sumbol strech">
+                <img class="sumbol" id="sumbol5" src="Elements/key.png">
+                <img class="chest" id="chest5" src="Elements/6.png">
+              </div>
+                <button type="button" class="btn_info strech">інфо</button>
+            </div>
+            <div class="div2">
+              <img class="s" src="Elements/s/1.png">
+            </div>
+          </div>
+        </div>
+        <div class="block_for_buttons">
+          <div class="for_btn_auto">
+            <button type="button" class="btn_auto" onclick="open_auto()"disabled>АВТО</button>
+            <button type="button" class="btn_play_mod" onclick="play_game(event)">ГРАТИ</button>
+            <div class="for_mes_mod"></div>
+          </div>
+          <div class="for_stavka">
+            <div class="for_label_sum_stavka">
+              <label class="label_sum_stavka">0$</label>
+            </div>
+            <button type="button" class="btn_win" onclick="game_over(true)" disabled>ЗАБРАТИ ВИГРАШ</button>
+          </div>
+        </div>
+        <div class="for_mes"></div>
+      </div>
+    </div>
+  </body>
+</html>
